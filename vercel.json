@@ -1,5 +1,6 @@
 {
   "version": 2,
+  "installCommand": "npm install && npm install --prefix temple-frontend",
   "buildCommand": "npm run build --prefix temple-frontend",
   "outputDirectory": "temple-frontend/build",
   "rewrites": [
