@@ -1,0 +1,228 @@
+/* Circuits Page Styles */
+.circuits-page {
+  background-color: var(--bg-primary);
+  min-height: 100vh;
+  padding-bottom: 5rem;
+}
+
+.circuits-header {
+  background-color: var(--header-bg);
+  color: var(--header-text);
+  padding: 3.5rem 1.5rem;
+  text-align: center;
+  border-bottom: 1px solid var(--border-color);
+  box-shadow: var(--shadow-md);
+  margin-bottom: 3rem;
+}
+
+.circuits-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(249, 115, 22, 0.15);
+  color: var(--accent-color);
+  padding: 4px 14px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.75rem;
+}
+
+.circuits-header h1 {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  color: var(--header-text);
+  margin: 0 0 0.75rem 0;
+}
+
+.circuits-header p {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.circuits-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.circuits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 2rem;
+}
+
+.circuit-card {
+  background: var(--bg-surface);
+  border-radius: 14px;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.circuit-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(249, 115, 22, 0.35);
+}
+
+.circuit-card-header {
+  padding: 1.75rem 1.75rem 1rem 1.75rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.circuit-region-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.5rem;
+}
+
+.circuit-card-header h2 {
+  font-family: 'Cinzel', serif;
+  margin: 0;
+  font-size: 1.45rem;
+  color: var(--text-primary);
+  line-height: 1.3;
+}
+
+.circuit-card-body {
+  padding: 1.75rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.circuit-desc {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.suggested-order-section h4,
+.covered-temples-section h4 {
+  margin: 0 0 0.75rem 0;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.route-icon {
+  color: var(--accent-color);
+}
+
+.order-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.order-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.step-num {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: rgba(249, 115, 22, 0.15);
+  color: var(--accent-color);
+  font-size: 0.75rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.step-text {
+  line-height: 1.5;
+}
+
+.temple-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.temple-chip-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  text-decoration: none;
+  font-size: 0.85rem;
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.temple-chip-link:hover {
+  background: rgba(249, 115, 22, 0.08);
+  border-color: var(--accent-color);
+  color: var(--accent-color);
+}
+
+.tag-arrow {
+  font-size: 0.75rem;
+  opacity: 0.7;
+}
+
+.circuit-card-footer {
+  padding: 1.25rem 1.75rem;
+  background: var(--bg-primary);
+  border-top: 1px solid var(--border-color);
+}
+
+.explore-all-link {
+  color: var(--accent-color);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.9rem;
+  transition: color 0.2s;
+}
+
+.explore-all-link:hover {
+  color: var(--accent-hover);
+}
+
+/* Loading & Empty States */
+.circuits-loading, .circuits-error, .empty-circuits {
+  text-align: center;
+  padding: 5rem 2rem;
+  background: var(--bg-surface);
+  border-radius: 14px;
+  border: 1px dashed var(--border-color);
+}
+
+.empty-icon {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+}
