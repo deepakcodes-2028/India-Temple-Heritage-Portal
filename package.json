@@ -1,0 +1,23 @@
+{
+  "name": "india-temple-portal-root",
+  "version": "1.0.0",
+  "description": "Root configuration to run both frontend and backend simultaneously",
+  "scripts": {
+    "server": "npm run dev --prefix server",
+    "client": "npm start --prefix temple-frontend",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "build": "npm run build --prefix temple-frontend",
+    "seed": "npm run seed --prefix server"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "concurrently": "^10.0.5",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^9.9.4"
+  }
+}
