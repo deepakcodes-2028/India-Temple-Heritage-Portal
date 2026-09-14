@@ -1,157 +1,360 @@
-# Temple Yatra
+# 🛕 Temple Yatra — India Temple Heritage & Pilgrimage Portal
 
-## Project Description
+Temple Yatra is a full-stack web application that provides information about temples and pilgrimage places across India.
 
-Temple Yatra is a full-stack web application designed to explore and preserve information about India's sacred temples, pilgrimage circuits, and festivals. Users can browse temple histories, daily darshan timings, rituals, dress codes, and location directions without creating an account. The platform also includes a secure admin portal for managing temple listings and information.
+Users can explore temple history, timings, festivals, pilgrimage circuits, visitor rules, and temple locations.
 
----
-
-## Key Features
-
-* **50 Sacred Temples**: Complete profiles with history, architecture, daily darshan schedules, pooja rituals, and visitor rules.
-* **Search & Filters**: Quick search by temple name, deity, or city, along with filters for states and categories (such as 12 Jyotirlingas, Char Dham, and UNESCO Heritage).
-* **Pilgrimage Circuits**: Step-by-step guides for famous holy routes like Char Dham Yatra, 12 Jyotirlingas, and South Indian temple circuits.
-* **Festivals Guide**: Calendar and details of major temple festivals celebrated across India.
-* **Directions & Sharing**: One-click Google Maps navigation links and built-in sharing options.
-* **Dark & Light Mode**: Simple theme toggle that saves user preference.
-* **Admin Dashboard**: Protected login system for administrators to add, edit, feature, or remove temple records.
-* **Responsive Layout**: Works smoothly on mobile phones, tablets, and desktop computers.
+The project does not require users to create an account to view temple information.
 
 ---
 
-## Technologies Used
+## 📌 Project Description
 
-* **Frontend**: React 19, React Router v7, Vanilla CSS, React Icons, Axios
-* **Backend**: Node.js, Express 5, JSON Web Token (JWT), bcryptjs, CORS, dotenv
-* **Database**: MongoDB Atlas with Mongoose 9
-* **AI/ML/RAG**: None (This project does not use AI, ML, or RAG tools)
+Temple Yatra helps users easily discover information about Indian temples.
+
+The website provides:
+
+* Temple history and details
+* Darshan and pooja timings
+* Temple festivals
+* Visitor rules and dress codes
+* Temple locations
+* Pilgrimage circuits
+* Festival information
+* Google Maps navigation
+
+The project also has an **Admin Dashboard**. Authorized administrators can add, edit, feature, and delete temple information.
 
 ---
 
-## How It Works
+## ✨ Key Features
 
-1. A user visits the website and browses temples, pilgrimage circuits, or festivals.
-2. The React frontend sends HTTP requests to the Express backend API endpoints (`/api/temples`, `/api/festivals`, `/api/pilgrimages`).
-3. The Express backend reads or writes data in the MongoDB Atlas database using Mongoose schemas.
-4. The frontend receives the JSON data and displays the temple information, pictures, and timings.
-5. Administrators can log in through the admin route to obtain a secure JWT token and manage temple records.
+* 🛕 **50 Temple Profiles**
+
+  * Temple history
+  * Deity information
+  * Architecture
+  * Darshan timings
+  * Pooja timings
+  * Visitor rules
+
+* 🔎 **Search and Filters**
+
+  * Search by temple name, deity, or city
+  * Filter by Indian state
+  * Filter by temple category
+
+* 🛣️ **Pilgrimage Circuits**
+
+  * Char Dham Yatra
+  * 12 Jyotirlingas
+  * South Indian Temple Trail
+  * Other pilgrimage circuits
+
+* 🪔 **Festival Guide**
+
+  * Festival dates
+  * Lunar periods
+  * Festival importance
+  * Related temples
+
+* 📍 **Google Maps Navigation**
+
+  * Open the temple location directly in Google Maps
+
+* 📤 **Share Temple Information**
+
+  * Share temple details using the web share feature
+
+* 🌙 **Light and Dark Theme**
+
+  * Switch between light and dark themes
+  * Theme preference is saved in `localStorage`
+
+* 🔐 **Admin Dashboard**
+
+  * Secure admin login
+  * Add temples
+  * Edit temple details
+  * Update timings
+  * Feature temples
+  * Delete temple records
+
+* 📱 **Responsive Design**
+
+  * Works on desktop, tablet, and mobile devices
 
 ---
 
-## Project Structure
+## 🛠️ Technologies Used
 
+| Part              | Technology      |
+| ----------------- | --------------- |
+| Frontend          | React 19        |
+| Routing           | React Router v7 |
+| Styling           | Vanilla CSS3    |
+| Icons             | React Icons     |
+| HTTP Requests     | Axios           |
+| Backend           | Node.js         |
+| API               | Express.js 5    |
+| Database          | MongoDB Atlas   |
+| Database Tool     | Mongoose 9      |
+| Authentication    | JWT             |
+| Password Security | bcryptjs        |
+| Deployment        | Vercel          |
+
+---
+
+## 🧠 How It Works
+
+### 1. Frontend
+
+The frontend is built with React.
+
+Users can:
+
+* Open the website
+* Search for temples
+* Apply filters
+* View temple details
+* Explore pilgrimage circuits
+* View festivals
+* Open temple locations in Google Maps
+
+### 2. Backend
+
+The backend uses Node.js and Express.js.
+
+It provides APIs for:
+
+* Temples
+* Festivals
+* Pilgrimage circuits
+* Admin authentication
+
+The frontend uses Axios to communicate with these APIs.
+
+### 3. Database
+
+MongoDB Atlas stores the project data.
+
+The main data collections are:
+
+* `Temple`
+* `Festival`
+* `PilgrimageCircuit`
+* `User`
+
+Mongoose is used to work with the MongoDB database.
+
+### 4. Admin Security
+
+Admin features are protected using JWT authentication.
+
+Admin passwords are stored using `bcryptjs` password hashing.
+
+---
+
+## 💻 How to Run Locally
+
+You can run the project using VS Code.
+
+### Step 1: Clone the Repository
+
+```bash
+git clone https://github.com/deepakcodes-2028/India-Temple-Heritage-Portal.git
+cd India-Temple-Heritage-Portal
 ```
-TempleYatra/
+
+### Step 2: Install Dependencies
+
+Install the root dependencies:
+
+```bash
+npm install
+```
+
+Install backend dependencies:
+
+```bash
+npm install --prefix server
+```
+
+Install frontend dependencies:
+
+```bash
+npm install --prefix temple-frontend
+```
+
+### Step 3: Set Environment Variables
+
+Create the environment file:
+
+```bash
+cp server/.env.example server/.env
+```
+
+Open `server/.env` and add your values:
+
+```env
+PORT=5000
+MONGO_URI=your_mongodb_atlas_connection_string
+JWT_SECRET=your_secret_key
+NODE_ENV=development
+```
+
+Do not share your MongoDB connection string or JWT secret publicly.
+
+### Step 4: Add Initial Data
+
+Run the seed command:
+
+```bash
+npm run seed
+```
+
+This adds the initial temple, festival, pilgrimage circuit, and admin data to the database.
+
+### Step 5: Start the Project
+
+Run:
+
+```bash
+npm run dev
+```
+
+The project will start the frontend and backend together.
+
+### Local URLs
+
+* **Frontend:** `http://localhost:3000`
+* **Backend API:** `http://localhost:5000/api`
+* **Health Check:** `http://localhost:5000/api/health`
+* **Admin Login:** `http://localhost:3000/admin/login`
+
+---
+
+## ☁️ Deployment on Vercel
+
+The project is configured to run as a full-stack application on Vercel.
+
+### Step 1: Configure MongoDB Atlas
+
+Add the required network access settings in MongoDB Atlas so the deployed application can connect to the database.
+
+### Step 2: Import the GitHub Repository
+
+Open Vercel and import:
+
+```text
+India-Temple-Heritage-Portal
+```
+
+### Step 3: Configure Environment Variables
+
+Add these variables in Vercel:
+
+| Variable     | Value                                |
+| ------------ | ------------------------------------ |
+| `MONGO_URI`  | Your MongoDB Atlas connection string |
+| `JWT_SECRET` | Your secret key                      |
+| `NODE_ENV`   | `production`                         |
+
+### Step 4: Deploy
+
+Click **Deploy**.
+
+Vercel will build and deploy the frontend and backend according to the project configuration.
+
+---
+
+## 📁 Project Structure
+
+```text
+India-Temple-Heritage-Portal/
+│
 ├── api/
-│   └── index.js             # Serverless deployment entry point
+│   └── index.js
+│
 ├── server/
 │   ├── src/
-│   │   ├── config/          # MongoDB database connection
-│   │   ├── controllers/     # API route handlers (temples, festivals, circuits, auth)
-│   │   ├── middleware/      # JWT authentication middleware
-│   │   ├── models/          # Database models (Temple, Festival, Circuit, User)
-│   │   ├── routes/          # Express API routes
-│   │   ├── seed.js          # Database seeding script with 50 temples
-│   │   └── server.js        # Express application setup
-│   ├── .env.example         # Example server environment variables
-│   └── package.json         # Backend dependencies and scripts
+│   │   ├── config/
+│   │   │   └── db.js
+│   │   │
+│   │   ├── controllers/
+│   │   │
+│   │   ├── middleware/
+│   │   │
+│   │   ├── models/
+│   │   │
+│   │   ├── routes/
+│   │   │
+│   │   ├── seed.js
+│   │   └── server.js
+│   │
+│   ├── .env.example
+│   └── package.json
+│
 ├── temple-frontend/
 │   ├── public/
-│   │   ├── images/          # Local temple images and website logo
-│   │   └── index.html       # Web page entry point
+│   │   ├── images/
+│   │   └── index.html
+│   │
 │   ├── src/
-│   │   ├── components/      # UI components (Navbar, Footer)
-│   │   ├── context/         # Auth and Theme context
-│   │   ├── pages/           # Application pages (Home, Temples, Detail, Circuits, Admin)
-│   │   ├── services/        # Axios API client setup
-│   │   ├── App.js           # Route configuration
-│   │   └── index.js         # React root rendering
-│   ├── .env.example         # Example frontend environment variables
-│   └── package.json         # Frontend dependencies and scripts
-├── package.json             # Root scripts to run both servers concurrently
-└── README.md                # Project documentation
+│   │   ├── components/
+│   │   ├── context/
+│   │   ├── pages/
+│   │   ├── services/
+│   │   ├── App.js
+│   │   ├── index.css
+│   │   └── theme.css
+│   │
+│   ├── .env.example
+│   └── package.json
+│
+├── vercel.json
+├── package.json
+└── README.md
 ```
 
 ---
 
-## Installation
+## 🔐 Admin Access
 
-1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/deepakbalan26/TempleYatra.git
-   cd TempleYatra
-   ```
+The admin dashboard is available at:
 
-2. **Install root and project dependencies**:
-   ```bash
-   npm install
-   npm install --prefix server
-   npm install --prefix temple-frontend
-   ```
+```text
+/admin/login
+```
 
-3. **Configure Environment Variables**:
-   Create a `.env` file in the `server` folder by copying `server/.env.example`:
-   ```bash
-   cp server/.env.example server/.env
-   ```
-   Add your MongoDB connection string and JWT secret.
+For security, **do not publish real admin passwords in the GitHub README**.
 
-4. **Seed the database**:
-   ```bash
-   npm run seed
-   ```
+Use the credentials configured for your deployment or provide test credentials separately to evaluators.
 
 ---
 
-## How to Run
+## 🔮 Future Improvements
 
-* **Start both backend and frontend together (from the root folder)**:
-  ```bash
-  npm run dev
-  ```
-
-* **Access the application**:
-  * Frontend: [http://localhost:3000](http://localhost:3000)
-  * Backend API: [http://localhost:5000/api](http://localhost:5000/api)
-  * Backend Health Check: [http://localhost:5000/api/health](http://localhost:5000/api/health)
-  * Admin Login: [http://localhost:3000/admin/login](http://localhost:3000/admin/login)
+* Add temple information in more Indian languages
+* Add audio for aartis, bells, and mantras
+* Add Progressive Web App (PWA) support
+* Add offline access for selected information
+* Add more temples and pilgrimage circuits
+* Improve search and filtering
+* Add more verified temple information
 
 ---
 
-## Environment Variables
+## 👨‍💻 Author
 
-### Backend (`server/.env`)
-* `PORT`: Port number for the backend server (e.g. `5000`)
-* `MONGO_URI`: MongoDB connection string
-* `JWT_SECRET`: Secret key used to sign JWT authentication tokens
-* `NODE_ENV`: Application environment (`development` or `production`)
+**Deepak Balan**
 
-### Frontend (`temple-frontend/.env` - Optional)
-* `REACT_APP_API_URL`: Backend API base URL (defaults to `http://localhost:5000/api` for local development)
+GitHub: [@deepakcodes-2028](https://github.com/deepakcodes-2028)
 
 ---
 
-## Usage
+## 📄 License
 
-* **Search Temples**: Use the search bar on the home or temples page to find temples by name, deity, or city.
-* **Filter Records**: Select a state or category to view specific groups like 12 Jyotirlingas or Char Dham.
-* **View Temple Information**: Click on any temple card to view history, darshan timings, pooja schedules, dress code, and visitor etiquette.
-* **Get Directions**: Click the "Open in Google Maps" button to open navigation directly on your device.
-* **Explore Circuits & Festivals**: Visit the Pilgrimages and Festivals pages from the navigation menu to discover sacred trails and holy dates.
-* **Change Theme**: Click the theme toggle icon in the navigation bar to switch between dark and light modes.
-* **Admin Management**: Sign in at `/admin/login` to create new temple listings, update existing records, or toggle featured status.
+This project is developed for educational and portfolio purposes.
 
----
-
-## Future Improvements
-
-* Add user reviews and ratings for temple visits.
-* Add audio recordings for daily temple aartis and chants.
-* Add support for Indian regional languages such as Hindi and Tamil.
-* Add offline support (PWA) so travelers can view temple timings without internet.
-
----
-
-## Author
-
-* **Deepak Balan** - [deepakbalan26@gmail.com](mailto:deepakbalan26@gmail.com)
+Temple information is collected and organized from public educational and temple-related resources.
