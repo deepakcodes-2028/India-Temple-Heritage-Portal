@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Root configuration to run both frontend and backend simultaneously",
   "scripts": {
+    "postinstall": "npm install --prefix temple-frontend",
     "server": "npm run dev --prefix server",
     "client": "npm start --prefix temple-frontend",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
